@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Alert Application</string>
+    <string name="dialog_1_title">Важное сообщение</string>
+    <string name="dialog_1_message">Причина вызова описана тут</string>
+
+    <string name="yes">Да</string>
+    <string name="no">net</string>
+    <string name="other">Other</string>
+</resources>
