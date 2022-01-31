@@ -2,9 +2,9 @@
 <resources>
 
     <string-array name="variants">
-        <item>First</item>
-        <item>Second</item>
-        <item>Third</item>
+        <item>Ярослав</item>
+        <item>Добромир</item>
+        <item>Папа</item>
     </string-array>
 
 
