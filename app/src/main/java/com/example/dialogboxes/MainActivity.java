@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,34 @@ public class MainActivity extends AppCompatActivity {
 
         Button alertDialogListMulti = findViewById(R.id.alert_dialog_list_checkboxes);
         alertDialogListMulti.setOnClickListener(clickListenerDialogListMulti);
+
+        Button alertDialogCustom = findViewById(R.id.alert_dialog_custom);
+        alertDialogCustom.setOnClickListener(clickListenerDialogCustom);
     }
+
+
+
+    private final View.OnClickListener clickListenerDialogCustom = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            View frameLayout = getLayoutInflater().inflate(R.layout.dialog_custom, null);
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle(R.string.dialog_1_title)
+                    .setView(frameLayout)
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            EditText editText = frameLayout.findViewById(R.id.edit_text);
+                            Log.d("TAG", " selected " + editText.getText().toString());
+                        }
+                    });
+
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    };
+
 
     private final View.OnClickListener clickListenerDialog1 = new View.OnClickListener() {
         @Override
@@ -100,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.d("TAG", "RadioButtony  = [" + dialogInterface + "], i = [" + i + "]");
                         }
                     })
-                    .setPositiveButton(R.string.yes, dialogListener)
+                .setPositiveButton(R.string.yes, dialogListener)
                     .setNegativeButton(R.string.no, dialogListener)
                     .setNeutralButton(R.string.other, dialogListener);
 

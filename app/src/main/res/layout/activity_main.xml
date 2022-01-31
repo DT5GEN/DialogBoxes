@@ -38,5 +38,11 @@
         android:text="алерт с чеками "
         android:id="@+id/alert_dialog_list_checkboxes"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" алерт кастом "
+        android:id="@+id/alert_dialog_custom"/>
+
 
 </LinearLayout>
