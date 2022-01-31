@@ -2,6 +2,7 @@ package com.example.dialogboxes;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -34,8 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
         Button alertDialogCustom = findViewById(R.id.alert_dialog_custom);
         alertDialogCustom.setOnClickListener(clickListenerDialogCustom);
+
+        Button fragmentDialogBuilder = findViewById(R.id.fragment_dialog_custom);
+        fragmentDialogBuilder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogBuilderFragment dialogBuilderFragment = new DialogBuilderFragment();
+                dialogBuilderFragment.show(getSupportFragmentManager(), "любой тэг");
+            }
+        });
     }
 
+
+    public void onResultDialogFragment (String answer){
+        Log.d("TAG", " отобразили  " + answer);
+    }
 
 
     private final View.OnClickListener clickListenerDialogCustom = new View.OnClickListener() {
