@@ -3,7 +3,6 @@ package com.example.dialogboxes;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -18,7 +17,7 @@ public class DialogBuilderFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 
-        View view = getLayoutInflater().inflate(R.layout.fragment_dialog_custom, null);
+        View view = getLayoutInflater().inflate(R.layout.fragment_dialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
         builder.setTitle(R.string.dialog_1_title)
                 .setView(view)

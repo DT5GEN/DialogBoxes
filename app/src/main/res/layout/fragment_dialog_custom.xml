@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="18dp"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_text"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="15"
-        android:layout_gravity="center"/>
+        android:id="@+id/text_view_custom"
+        android:textSize="20sp"
+        android:text="Input Name"/>
 
-</FrameLayout>
+<include layout="@layout/dialog_custom"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_custom"
+            android:layout_weight="1"
+            android:text=" done "/>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
