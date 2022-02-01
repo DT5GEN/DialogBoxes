@@ -67,7 +67,16 @@ public class MainActivity extends AppCompatActivity {
                 dialogBuilderFragment.show(getSupportFragmentManager(), "любой тэг");
             }
         });
-        //Goo
+
+//
+//BadClass badClass = new BadClass(1,2,3,4,5);
+
+GoodClass.Builder goodClassBuilder = (new GoodClass.Builder(1,2,3))
+        .setField1(2)
+        .setField2(5);
+
+GoodClass goodClass = goodClassBuilder.build(); // завершает создание класса в нужном месте
+
     }
 
 

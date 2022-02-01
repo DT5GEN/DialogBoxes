@@ -25,11 +25,11 @@ public class GoodClass {
     }
 
     public static class Builder {
-        private int field1;
-        private int field2;
-        private final int field3;
-        private final int field4;
-        private final int field5;
+        private int field1;           //
+        private int field2;           //  необязательные поля 2
+        private final int field3;      //  обязательные поля 3
+        private final int field4;       //
+        private final int field5;       //
 
 
         public Builder setField1(int value) {
@@ -42,7 +42,7 @@ public class GoodClass {
             return this;
         }
 
-        public Builder(int field3, int field4, int field5) {
+        public Builder(int field3, int field4, int field5) {   // конструктор для обязательных полей
             this.field3 = field3;
             this.field4 = field4;
             this.field5 = field5;
