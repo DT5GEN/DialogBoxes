@@ -1,15 +1,14 @@
 package com.example.dialogboxes;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
         alertDialogCustom.setOnClickListener(clickListenerDialogCustom);
 
 
+
+        Button fragmentBottomDialog = findViewById(R.id.fragment_bottom_dialog);
+        fragmentBottomDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               MyBottomSheetDialogFragment myBottomSheetDialogFragment =
+                       new MyBottomSheetDialogFragment();
+                myBottomSheetDialogFragment.setOnDialogListener(onDialogListener);
+               myBottomSheetDialogFragment.show(getSupportFragmentManager(), " любой тэг");
+            }
+        });
+
+
         Button fragmentCustomBuilder = findViewById(R.id.fragment_custom);
         fragmentCustomBuilder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,12 +67,28 @@ public class MainActivity extends AppCompatActivity {
                 dialogBuilderFragment.show(getSupportFragmentManager(), "любой тэг");
             }
         });
+        //Goo
     }
 
 
     public void onResultDialogFragment (String answer){
         Log.d("TAG", " отобразили  " + answer);
     }
+
+
+    private final OnDialogListener onDialogListener= new OnDialogListener () {
+
+
+        @Override
+        public void pressOk() {
+            Log.d("TAG", " нажали прессОк  ");
+        }
+
+        @Override
+        public void pressNo() {
+            Log.d("TAG", " нажали прессНо  ");
+        }
+    };
 
 
     private final View.OnClickListener clickListenerDialogCustom = new View.OnClickListener() {

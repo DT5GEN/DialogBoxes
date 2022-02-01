@@ -25,8 +25,7 @@ public class DialogCustomFragment extends DialogFragment {
         View view = getLayoutInflater().inflate(R.layout.fragment_dialog_custom, container, false);
         initView(view);
         initListener();
-
-        // TODO
+        setCancelable(true);  // делает неактивным весь экран кроме кнопки
         return view;
     }
 
